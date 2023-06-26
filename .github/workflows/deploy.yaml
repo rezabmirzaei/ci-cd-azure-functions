@@ -1,24 +1,19 @@
-name: Deploy Node.js project to Azure Function App
+name: Deploy DemoHttpTrigger function (Node.js) to Azure Function App
 
 on:
-  [push]
+  push:
+    branches:
+      - main
 
-# CONFIGURATION
-# For help, go to https://github.com/Azure/Actions
-#
-# 1. Set up the following secrets in your repository:
-#   AZURE_FUNCTIONAPP_PUBLISH_PROFILE
-#
-# 2. Change these variables for your configuration:
 env:
-  AZURE_FUNCTIONAPP_NAME: 'func-demo-app-reza'   # set this to your function app name on Azure
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.'       # set this to the path to your function app project, defaults to the repository root
-  NODE_VERSION: '18.x'                      # set this to the node version to use (e.g. '8.x', '10.x', '12.x')
+  AZURE_FUNCTIONAPP_NAME: 'func-demo-app-reza'
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.'
+  NODE_VERSION: '18.x'
 
 jobs:
   build-and-deploy:
     runs-on: windows-latest
-    environment: dev
+    environment: test
     steps:
     - name: 'Checkout GitHub Action'
       uses: actions/checkout@v3
@@ -44,5 +39,3 @@ jobs:
         app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
         package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
         publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
-
-# For more samples to get started with GitHub Action workflows to deploy to Azure, refer to https://github.com/Azure/actions-workflow-samples
