@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  AZURE_FUNCTIONAPP_NAME: 'func-demo-app-reza' # Name of the functions app to deploy to - change to yours!
+  AZURE_FUNCTIONAPP_NAME: ${{ secrets.AZURE_FUNCTIONAPP_NAME }}
   AZURE_FUNCTIONAPP_PACKAGE_PATH: '.'
   NODE_VERSION: '18.x'
 

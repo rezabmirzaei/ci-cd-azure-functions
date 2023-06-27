@@ -11,15 +11,18 @@ A simple demo of an HttpTrigger Azure Functions app, developed using **Visual St
 * [Azure account](https://azure.microsoft.com/en-us/free/) and [subscription](https://learn.microsoft.com/en-us/dynamics-nav/how-to--sign-up-for-a-microsoft-azure-subscription)
   * An [Azure Functions app](https://learn.microsoft.com/en-us/azure/azure-functions/functions-create-function-app-portal) to host the execution of your functions resource
 
-## Connect to your Azure account (tenant)
-In Visual Studio Code, open the Azure Tools extension and connect to you active Azure Account.
+## Development and deployment setup
 
-## Create an Azure Function (HTTP trigger)
-In Visual Studio Code, create a new functions app by [TODO]
+Follow [this guide](https://learn.microsoft.com/en-us/azure/azure-functions/create-first-function-vs-code-node?pivots=nodejs-model-v4#create-an-azure-functions-project) to:
+
+* Connect to your active Azure account
+* Create an Azure Functions resource in Azure
+* Optional: Create and test an Azure Functions app locally (or just deploy the one provided here)
+* Deploy the Functions app to Azure
 
 ## Create/modify the GitHub Actions workflow
-[TODO]
-* Set up AZURE_FUNCTIONAPP_PUBLISH_PROFILE
-* Modify AZURE_FUNCTIONAPP_NAME
 
-## Test the workflow
+Set up your CI/CD pipeline (GitHub Actions) using [this guide](https://learn.microsoft.com/en-us/azure/azure-functions/functions-how-to-github-actions?tabs=windows%2Cjavascript&pivots=method-manual) to:
+
+* Generate deployment credential (``AZURE_FUNCTIONAPP_PUBLISH_PROFILE``)
+* Create/modify the workflow from a template (``AZURE_FUNCTIONAPP_NAME``)
